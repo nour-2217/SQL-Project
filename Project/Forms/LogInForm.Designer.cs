@@ -223,7 +223,7 @@ namespace Project
         private System.Windows.Forms.PictureBox pictureBox1;
         private static string ConnectionString = "Data Source=(local);Initial Catalog=SQLAdvProject;"
             + "Integrated Security=true";
-        public System.Data.SqlClient.SqlConnection Connection = new SqlConnection(ConnectionString);
+        public static System.Data.SqlClient.SqlConnection Connection = new SqlConnection(ConnectionString);
     }
 }
 
