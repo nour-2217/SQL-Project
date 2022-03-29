@@ -1,6 +1,7 @@
 ﻿
 namespace Project
 {
+    using System.Data.SqlClient;
     partial class LogInForm
     {
         /// <summary>
@@ -220,6 +221,9 @@ namespace Project
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private static string ConnectionString = "Data Source=(local);Initial Catalog=SQLAdvProject;"
+            + "Integrated Security=true";
+        public System.Data.SqlClient.SqlConnection Connection = new SqlConnection(ConnectionString);
     }
 }
 

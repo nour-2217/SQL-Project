@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Project
 {
@@ -16,6 +17,7 @@ namespace Project
         public LogInForm()
         {
             InitializeComponent();
+            Connection.Open();
         }
 
         private void logIn_btn_Click(object sender, EventArgs e)
