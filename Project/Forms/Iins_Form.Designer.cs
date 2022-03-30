@@ -51,6 +51,8 @@ namespace Project.Forms
             this.add_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txb_insUsername = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +62,9 @@ namespace Project.Forms
             this.dgv_instructors.Location = new System.Drawing.Point(373, 12);
             this.dgv_instructors.Name = "dgv_instructors";
             this.dgv_instructors.RowTemplate.Height = 25;
-            this.dgv_instructors.Size = new System.Drawing.Size(478, 408);
+            this.dgv_instructors.Size = new System.Drawing.Size(478, 362);
             this.dgv_instructors.TabIndex = 20;
-            this.dgv_instructors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_instructors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_instructors_CellContentClick);
             // 
             // label8
             // 
@@ -139,7 +141,7 @@ namespace Project.Forms
             // 
             this.txb_insPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
             this.txb_insPass.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txb_insPass.Location = new System.Drawing.Point(163, 288);
+            this.txb_insPass.Location = new System.Drawing.Point(163, 332);
             this.txb_insPass.Multiline = true;
             this.txb_insPass.Name = "txb_insPass";
             this.txb_insPass.Size = new System.Drawing.Size(204, 40);
@@ -149,7 +151,7 @@ namespace Project.Forms
             // 
             this.txb_insAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
             this.txb_insAge.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txb_insAge.Location = new System.Drawing.Point(163, 334);
+            this.txb_insAge.Location = new System.Drawing.Point(163, 380);
             this.txb_insAge.Multiline = true;
             this.txb_insAge.Name = "txb_insAge";
             this.txb_insAge.Size = new System.Drawing.Size(204, 40);
@@ -160,7 +162,7 @@ namespace Project.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(27, 350);
+            this.label2.Location = new System.Drawing.Point(27, 385);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 24);
             this.label2.TabIndex = 30;
@@ -171,7 +173,7 @@ namespace Project.Forms
             this.txb_pass.AutoSize = true;
             this.txb_pass.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txb_pass.ForeColor = System.Drawing.Color.Maroon;
-            this.txb_pass.Location = new System.Drawing.Point(23, 304);
+            this.txb_pass.Location = new System.Drawing.Point(23, 342);
             this.txb_pass.Name = "txb_pass";
             this.txb_pass.Size = new System.Drawing.Size(92, 24);
             this.txb_pass.TabIndex = 31;
@@ -236,7 +238,7 @@ namespace Project.Forms
             // 
             this.txb_insDept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
             this.txb_insDept.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txb_insDept.Location = new System.Drawing.Point(163, 380);
+            this.txb_insDept.Location = new System.Drawing.Point(507, 385);
             this.txb_insDept.Multiline = true;
             this.txb_insDept.Name = "txb_insDept";
             this.txb_insDept.Size = new System.Drawing.Size(204, 40);
@@ -247,7 +249,7 @@ namespace Project.Forms
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(27, 396);
+            this.label10.Location = new System.Drawing.Point(372, 396);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 24);
             this.label10.TabIndex = 39;
@@ -263,6 +265,7 @@ namespace Project.Forms
             this.add_btn.TabIndex = 40;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // update_btn
             // 
@@ -274,6 +277,7 @@ namespace Project.Forms
             this.update_btn.TabIndex = 41;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // delete_btn
             // 
@@ -285,12 +289,36 @@ namespace Project.Forms
             this.delete_btn.TabIndex = 42;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(23, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 24);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Username";
+            // 
+            // txb_insUsername
+            // 
+            this.txb_insUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insUsername.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insUsername.Location = new System.Drawing.Point(163, 286);
+            this.txb_insUsername.Multiline = true;
+            this.txb_insUsername.Name = "txb_insUsername";
+            this.txb_insUsername.Size = new System.Drawing.Size(204, 40);
+            this.txb_insUsername.TabIndex = 43;
             // 
             // Iins_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 484);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txb_insUsername);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.add_btn);
@@ -315,6 +343,7 @@ namespace Project.Forms
             this.Controls.Add(this.dgv_instructors);
             this.Name = "Iins_Form";
             this.Text = "Iins_Form";
+            this.Load += new System.EventHandler(this.Iins_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_instructors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,5 +374,7 @@ namespace Project.Forms
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txb_insUsername;
     }
 }

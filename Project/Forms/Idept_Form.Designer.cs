@@ -51,6 +51,7 @@
             this.btn_deleteDept.TabIndex = 49;
             this.btn_deleteDept.Text = "Delete";
             this.btn_deleteDept.UseVisualStyleBackColor = true;
+            this.btn_deleteDept.Click += new System.EventHandler(this.btn_deleteDept_Click);
             // 
             // btn_updateDept
             // 
@@ -62,6 +63,7 @@
             this.btn_updateDept.TabIndex = 48;
             this.btn_updateDept.Text = "Update";
             this.btn_updateDept.UseVisualStyleBackColor = true;
+            this.btn_updateDept.Click += new System.EventHandler(this.btn_updateDept_Click);
             // 
             // btn_addDept
             // 
@@ -73,6 +75,7 @@
             this.btn_addDept.TabIndex = 47;
             this.btn_addDept.Text = "Add";
             this.btn_addDept.UseVisualStyleBackColor = true;
+            this.btn_addDept.Click += new System.EventHandler(this.btn_addDept_Click);
             // 
             // txb_deptLocation
             // 
@@ -112,6 +115,7 @@
             this.dgv_departments.RowTemplate.Height = 25;
             this.dgv_departments.Size = new System.Drawing.Size(310, 365);
             this.dgv_departments.TabIndex = 43;
+            this.dgv_departments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_departments_CellContentClick);
             // 
             // label7
             // 
@@ -163,6 +167,7 @@
             this.Controls.Add(this.dgv_departments);
             this.Name = "Idept_Form";
             this.Text = "Idept_Form";
+            this.Load += new System.EventHandler(this.Idept_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_departments)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
