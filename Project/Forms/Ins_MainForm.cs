@@ -39,7 +39,7 @@ namespace Project.Forms
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(247, 175, 157);
+                    previousBtn.BackColor = Color.FromArgb(255, 107, 107);
                     previousBtn.ForeColor = Color.FromArgb(128, 0, 0);
                     previousBtn.Font = new Font("Trebuchet MS", 12.25F, FontStyle.Bold, GraphicsUnit.Point);
                 }
@@ -74,6 +74,24 @@ namespace Project.Forms
         {
             ActivateButton(sender);
             OpenChildForm(new Forms.Istd_Form(), sender);
+        }
+
+        private void Department_btn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Forms.Idept_Form(), sender);
+        }
+
+        private void Course_btn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Forms.Icourse_Form(), sender);
+        }
+
+        private void Topic_btn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Forms.Itopic_Form(), sender);
         }
 
         private void Exam_btn_Click(object sender, EventArgs e)

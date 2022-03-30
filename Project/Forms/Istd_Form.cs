@@ -14,5 +14,11 @@ namespace Project.Forms
         {
             InitializeComponent();
         }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            Sedit_Form Sedit_form = new Sedit_Form();
+            Sedit_form.Show();
+        }
     }
 }

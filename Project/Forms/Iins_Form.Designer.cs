@@ -29,7 +29,7 @@ namespace Project.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InstructorGridView = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.id_textBox = new System.Windows.Forms.TextBox();
             this.fname_textBox = new System.Windows.Forms.TextBox();
@@ -37,7 +37,7 @@ namespace Project.Forms
             this.dob_textBox = new System.Windows.Forms.TextBox();
             this.gender_textBox = new System.Windows.Forms.TextBox();
             this.phone_textBox = new System.Windows.Forms.TextBox();
-            this.score_textBox = new System.Windows.Forms.TextBox();
+            this.password_textBox = new System.Windows.Forms.TextBox();
             this.age_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,17 +51,18 @@ namespace Project.Forms
             this.add_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.edit_btn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.InstructorGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // InstructorGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(494, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 365);
-            this.dataGridView1.TabIndex = 20;
+            this.InstructorGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.InstructorGridView.Location = new System.Drawing.Point(494, 28);
+            this.InstructorGridView.Name = "InstructorGridView";
+            this.InstructorGridView.RowTemplate.Height = 25;
+            this.InstructorGridView.Size = new System.Drawing.Size(310, 365);
+            this.InstructorGridView.TabIndex = 20;
             // 
             // label8
             // 
@@ -134,15 +135,15 @@ namespace Project.Forms
             this.phone_textBox.Size = new System.Drawing.Size(204, 40);
             this.phone_textBox.TabIndex = 27;
             // 
-            // score_textBox
+            // password_textBox
             // 
-            this.score_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.score_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.score_textBox.Location = new System.Drawing.Point(193, 288);
-            this.score_textBox.Multiline = true;
-            this.score_textBox.Name = "score_textBox";
-            this.score_textBox.Size = new System.Drawing.Size(204, 40);
-            this.score_textBox.TabIndex = 28;
+            this.password_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.password_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password_textBox.Location = new System.Drawing.Point(193, 288);
+            this.password_textBox.Multiline = true;
+            this.password_textBox.Name = "password_textBox";
+            this.password_textBox.Size = new System.Drawing.Size(204, 40);
+            this.password_textBox.TabIndex = 28;
             // 
             // age_textBox
             // 
@@ -172,9 +173,9 @@ namespace Project.Forms
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(23, 304);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 24);
+            this.label1.Size = new System.Drawing.Size(105, 24);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Score";
+            this.label1.Text = "Password :";
             // 
             // label3
             // 
@@ -256,23 +257,25 @@ namespace Project.Forms
             // 
             this.add_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.add_btn.Location = new System.Drawing.Point(75, 437);
+            this.add_btn.Location = new System.Drawing.Point(66, 437);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(159, 35);
             this.add_btn.TabIndex = 40;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // update_btn
             // 
             this.update_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.update_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.update_btn.Location = new System.Drawing.Point(353, 437);
+            this.update_btn.Location = new System.Drawing.Point(261, 437);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(159, 35);
             this.update_btn.TabIndex = 41;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // delete_btn
             // 
@@ -284,12 +287,26 @@ namespace Project.Forms
             this.delete_btn.TabIndex = 42;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
+            // edit_btn
+            // 
+            this.edit_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.edit_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.edit_btn.Location = new System.Drawing.Point(455, 437);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.Size = new System.Drawing.Size(159, 35);
+            this.edit_btn.TabIndex = 43;
+            this.edit_btn.Text = "Edit";
+            this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // Iins_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 484);
+            this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.add_btn);
@@ -303,7 +320,7 @@ namespace Project.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.age_textBox);
-            this.Controls.Add(this.score_textBox);
+            this.Controls.Add(this.password_textBox);
             this.Controls.Add(this.phone_textBox);
             this.Controls.Add(this.gender_textBox);
             this.Controls.Add(this.dob_textBox);
@@ -311,10 +328,11 @@ namespace Project.Forms
             this.Controls.Add(this.fname_textBox);
             this.Controls.Add(this.id_textBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.InstructorGridView);
             this.Name = "Iins_Form";
             this.Text = "Iins_Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Iins_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.InstructorGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +340,7 @@ namespace Project.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView InstructorGridView;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox id_textBox;
         private System.Windows.Forms.TextBox fname_textBox;
@@ -330,7 +348,7 @@ namespace Project.Forms
         private System.Windows.Forms.TextBox dob_textBox;
         private System.Windows.Forms.TextBox gender_textBox;
         private System.Windows.Forms.TextBox phone_textBox;
-        private System.Windows.Forms.TextBox score_textBox;
+        private System.Windows.Forms.TextBox password_textBox;
         private System.Windows.Forms.TextBox age_textBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -344,5 +362,6 @@ namespace Project.Forms
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button edit_btn;
     }
 }

@@ -49,6 +49,7 @@ namespace Project.Forms
             this.add_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
+            this.edit_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,7 +234,7 @@ namespace Project.Forms
             // 
             this.add_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.add_btn.Location = new System.Drawing.Point(75, 426);
+            this.add_btn.Location = new System.Drawing.Point(66, 437);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(159, 35);
             this.add_btn.TabIndex = 20;
@@ -244,7 +245,7 @@ namespace Project.Forms
             // 
             this.delete_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.delete_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.delete_btn.Location = new System.Drawing.Point(645, 426);
+            this.delete_btn.Location = new System.Drawing.Point(645, 437);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(159, 35);
             this.delete_btn.TabIndex = 21;
@@ -255,18 +256,31 @@ namespace Project.Forms
             // 
             this.update_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.update_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.update_btn.Location = new System.Drawing.Point(352, 426);
+            this.update_btn.Location = new System.Drawing.Point(261, 437);
             this.update_btn.Name = "update_btn";
             this.update_btn.Size = new System.Drawing.Size(159, 35);
             this.update_btn.TabIndex = 22;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
             // 
+            // edit_btn
+            // 
+            this.edit_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.edit_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.edit_btn.Location = new System.Drawing.Point(455, 437);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.Size = new System.Drawing.Size(159, 35);
+            this.edit_btn.TabIndex = 44;
+            this.edit_btn.Text = "Edit";
+            this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
+            // 
             // Istd_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 484);
+            this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.add_btn);
@@ -317,5 +331,6 @@ namespace Project.Forms
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button edit_btn;
     }
 }
