@@ -13,6 +13,7 @@ namespace Project.Forms
     {
         List<int> EIndex = new List<int>();
         List<int> TIndex = new List<int>();
+
         public Iexam_Form()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace Project.Forms
                 TopicExamFilter.Items.Add(Row["Name"].ToString());
             }
         }
+
         private void GetExam(string Statement)
         {
             SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
@@ -63,6 +65,7 @@ namespace Project.Forms
             ToFExamInput.Text =
             DurationExamInput.Text =
             DateExamInput.Text = String.Empty;
+            dataGridView2.DataSource = null;
         }
 
         private void GetQuestions(string ID)
@@ -94,23 +97,65 @@ namespace Project.Forms
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            string Statement = $"GenerateExam {TIndex[TopicExamList.SelectedIndex]}, {McQExamInput.Text}, {ToFExamInput.Text}, {DurationExamInput.Text}, '{DateExamInput.Text}'";
-            MessageBox.Show(Statement);
-            SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
-            int Flag = int.Parse(Command.ExecuteScalar().ToString());
-            switch (Flag)
+            try
             {
-                case 1:
-                    MessageBox.Show("Added Successfully!");
-                    break;
-                case 0:
-                    MessageBox.Show("McQ or ToF Amount Exceeds Available Bank!");
-                    break;
-                case -1:
-                    MessageBox.Show("Please check your Input Fields!");
-                    break;
+                string Statement = $"GenerateExam {TIndex[TopicExamList.SelectedIndex]}, {McQExamInput.Text}, {ToFExamInput.Text}, {DurationExamInput.Text}, '{DateExamInput.Text}'";
+                MessageBox.Show(Statement);
+                SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
+                int Flag = int.Parse(Command.ExecuteScalar().ToString());
+                switch (Flag)
+                {
+                    case 1:
+                        MessageBox.Show("Added Successfully!");
+                        break;
+                    case 0:
+                        MessageBox.Show("McQ or ToF Amount Exceeds Available Bank!");
+                        break;
+                    case -1:
+                        MessageBox.Show("Please check your Input Fields!");
+                        break;
+                }
+                GetExam("GetExam null, null");
             }
-            GetExam("GetExam null, null");
+            catch(Exception Obj)
+            {
+                MessageBox.Show(Obj.Message);
+            }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Statement = $"CheckExamFK {ExamIDOutput.Text}";
+                SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
+                int Flag = int.Parse(Command.ExecuteScalar().ToString());
+                Statement = $"Exam_Delete {ExamIDOutput.Text}";
+                Command = new SqlCommand(Statement, LogInForm.Connection);
+                switch (Flag)
+                {
+                    case 0:
+                        Command.ExecuteNonQuery();
+                        MessageBox.Show("Deleted Successfully!");
+                        GetExam("GetExam null, null");
+                        break;
+                    case 1:
+                        DialogResult Action = MessageBox.Show("Warning!", "This Exam has been taken by one or more students!", MessageBoxButtons.OKCancel);
+                        switch (Action)
+                        {
+                            case DialogResult.OK:
+                                Command.ExecuteNonQuery();
+                                MessageBox.Show("Deleted Successfully!");
+                                GetExam("GetExam null, null");
+                                break;
+                        }
+                        break;
+                }
+            }
+            catch (Exception Obj)
+            {
+                MessageBox.Show(Obj.Message);
+            }
         }
     }
 }
