@@ -16,6 +16,7 @@ namespace Project
         public LogInForm()
         {
             InitializeComponent();
+            Connection.Open();
         }
 
         private void logIn_btn_Click(object sender, EventArgs e)

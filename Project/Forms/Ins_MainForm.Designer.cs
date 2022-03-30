@@ -40,6 +40,7 @@ namespace Project.Forms
             this.Std_btn = new System.Windows.Forms.Button();
             this.Exam_btn = new System.Windows.Forms.Button();
             this.Ins_btn = new System.Windows.Forms.Button();
+            this.Choices = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelmenu.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@ namespace Project.Forms
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.panelmenu.Controls.Add(this.Choices);
             this.panelmenu.Controls.Add(this.Questions);
             this.panelmenu.Controls.Add(this.Rep_btn);
             this.panelmenu.Controls.Add(this.Std_btn);
@@ -106,7 +108,7 @@ namespace Project.Forms
             this.Questions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Questions.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Questions.ForeColor = System.Drawing.Color.Maroon;
-            this.Questions.Location = new System.Drawing.Point(-3, 263);
+            this.Questions.Location = new System.Drawing.Point(-3, 239);
             this.Questions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Questions.Name = "Questions";
             this.Questions.Size = new System.Drawing.Size(279, 65);
@@ -121,7 +123,7 @@ namespace Project.Forms
             this.Rep_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Rep_btn.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Rep_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.Rep_btn.Location = new System.Drawing.Point(3, 559);
+            this.Rep_btn.Location = new System.Drawing.Point(-3, 531);
             this.Rep_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Rep_btn.Name = "Rep_btn";
             this.Rep_btn.Size = new System.Drawing.Size(279, 65);
@@ -136,7 +138,7 @@ namespace Project.Forms
             this.Std_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Std_btn.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Std_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.Std_btn.Location = new System.Drawing.Point(-3, 361);
+            this.Std_btn.Location = new System.Drawing.Point(-3, 385);
             this.Std_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Std_btn.Name = "Std_btn";
             this.Std_btn.Size = new System.Drawing.Size(279, 65);
@@ -151,7 +153,7 @@ namespace Project.Forms
             this.Exam_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exam_btn.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Exam_btn.ForeColor = System.Drawing.Color.Maroon;
-            this.Exam_btn.Location = new System.Drawing.Point(0, 461);
+            this.Exam_btn.Location = new System.Drawing.Point(-3, 458);
             this.Exam_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Exam_btn.Name = "Exam_btn";
             this.Exam_btn.Size = new System.Drawing.Size(279, 65);
@@ -174,6 +176,21 @@ namespace Project.Forms
             this.Ins_btn.Text = "Instructor";
             this.Ins_btn.UseVisualStyleBackColor = false;
             this.Ins_btn.Click += new System.EventHandler(this.Ins_btn_Click);
+            // 
+            // Choices
+            // 
+            this.Choices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.Choices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Choices.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Choices.ForeColor = System.Drawing.Color.Maroon;
+            this.Choices.Location = new System.Drawing.Point(-3, 312);
+            this.Choices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Choices.Name = "Choices";
+            this.Choices.Size = new System.Drawing.Size(279, 65);
+            this.Choices.TabIndex = 5;
+            this.Choices.Text = "Choices";
+            this.Choices.UseVisualStyleBackColor = false;
+            this.Choices.Click += new System.EventHandler(this.Choices_Click);
             // 
             // Ins_MainForm
             // 
@@ -206,5 +223,6 @@ namespace Project.Forms
         private System.Windows.Forms.Button Exam_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Questions;
+        private System.Windows.Forms.Button Choices;
     }
 }

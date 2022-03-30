@@ -37,6 +37,9 @@
             this.TopicLabel = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.TextBox();
             this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionsGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +51,9 @@
             this.QuestionsGrid.Name = "QuestionsGrid";
             this.QuestionsGrid.RowHeadersWidth = 51;
             this.QuestionsGrid.RowTemplate.Height = 25;
-            this.QuestionsGrid.Size = new System.Drawing.Size(450, 500);
+            this.QuestionsGrid.Size = new System.Drawing.Size(450, 438);
             this.QuestionsGrid.TabIndex = 21;
-            this.QuestionsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionsGrid_CellContentClick);
+            this.QuestionsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionsGrid_CellClick);
             // 
             // ID
             // 
@@ -141,11 +144,53 @@
             this.DescriptionLabel.TabIndex = 29;
             this.DescriptionLabel.Text = "Description";
             // 
+            // update_btn
+            // 
+            this.update_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.update_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.update_btn.Location = new System.Drawing.Point(383, 538);
+            this.update_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(182, 47);
+            this.update_btn.TabIndex = 42;
+            this.update_btn.Text = "Update";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
+            // delete_btn
+            // 
+            this.delete_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.delete_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.delete_btn.Location = new System.Drawing.Point(690, 538);
+            this.delete_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Size = new System.Drawing.Size(182, 47);
+            this.delete_btn.TabIndex = 43;
+            this.delete_btn.Text = "Delete";
+            this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
+            // add_btn
+            // 
+            this.add_btn.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.add_btn.ForeColor = System.Drawing.Color.Maroon;
+            this.add_btn.Location = new System.Drawing.Point(79, 538);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(182, 47);
+            this.add_btn.TabIndex = 44;
+            this.add_btn.Text = "Add";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            // 
             // QuestionsMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 645);
+            this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.delete_btn);
+            this.Controls.Add(this.update_btn);
             this.Controls.Add(this.Description);
             this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.Topic);
@@ -175,5 +220,8 @@
         private System.Windows.Forms.Label TopicLabel;
         private System.Windows.Forms.TextBox Description;
         private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button add_btn;
     }
 }

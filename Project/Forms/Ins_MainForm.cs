@@ -98,5 +98,11 @@ namespace Project.Forms
             ActivateButton(sender);
             OpenChildForm(new Forms.QuestionsMainForm(), sender);
         }
+
+        private void Choices_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Forms.Choices(), sender);
+        }
     }
 }
