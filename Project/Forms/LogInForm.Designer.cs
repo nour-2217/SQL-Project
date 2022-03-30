@@ -224,6 +224,7 @@ namespace Project
         private static string ConnectionString = "Data Source=(local);Initial Catalog=SQLAdvProject;"
             + "Integrated Security=true";
         public static System.Data.SqlClient.SqlConnection Connection = new SqlConnection(ConnectionString);
+        public static Role LoggedInRole;
     }
 }
 
