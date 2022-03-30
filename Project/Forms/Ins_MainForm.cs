@@ -92,5 +92,11 @@ namespace Project.Forms
         {
             Application.Exit();
         }
+
+        private void btn_dept_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            OpenChildForm(new Forms.Idept_Form(), sender);
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace Project.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ins_MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.CloseAppbtn = new System.Windows.Forms.Button();
             this.desktop_panel = new System.Windows.Forms.Panel();
             this.panelmenu = new System.Windows.Forms.Panel();
@@ -38,7 +39,7 @@ namespace Project.Forms
             this.Std_btn = new System.Windows.Forms.Button();
             this.Exam_btn = new System.Windows.Forms.Button();
             this.Ins_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_dept = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelmenu.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,17 @@ namespace Project.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(888, 118);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(276, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(336, 43);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Examination System";
             // 
             // CloseAppbtn
             // 
@@ -74,6 +86,7 @@ namespace Project.Forms
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.panelmenu.Controls.Add(this.btn_dept);
             this.panelmenu.Controls.Add(this.Rep_btn);
             this.panelmenu.Controls.Add(this.Std_btn);
             this.panelmenu.Controls.Add(this.Exam_btn);
@@ -139,16 +152,19 @@ namespace Project.Forms
             this.Ins_btn.UseVisualStyleBackColor = false;
             this.Ins_btn.Click += new System.EventHandler(this.Ins_btn_Click);
             // 
-            // label1
+            // btn_dept
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(276, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 43);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Examination System";
+            this.btn_dept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.btn_dept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dept.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_dept.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_dept.Location = new System.Drawing.Point(3, 442);
+            this.btn_dept.Name = "btn_dept";
+            this.btn_dept.Size = new System.Drawing.Size(244, 49);
+            this.btn_dept.TabIndex = 5;
+            this.btn_dept.Text = "Departments";
+            this.btn_dept.UseVisualStyleBackColor = false;
+            this.btn_dept.Click += new System.EventHandler(this.btn_dept_Click);
             // 
             // Ins_MainForm
             // 
@@ -179,5 +195,6 @@ namespace Project.Forms
         private System.Windows.Forms.Button Std_btn;
         private System.Windows.Forms.Button Exam_btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_dept;
     }
 }
