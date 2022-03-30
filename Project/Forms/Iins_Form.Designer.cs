@@ -29,39 +29,40 @@ namespace Project.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_instructors = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.id_textBox = new System.Windows.Forms.TextBox();
-            this.fname_textBox = new System.Windows.Forms.TextBox();
-            this.Lname_textBox = new System.Windows.Forms.TextBox();
-            this.dob_textBox = new System.Windows.Forms.TextBox();
-            this.gender_textBox = new System.Windows.Forms.TextBox();
-            this.phone_textBox = new System.Windows.Forms.TextBox();
-            this.score_textBox = new System.Windows.Forms.TextBox();
-            this.age_textBox = new System.Windows.Forms.TextBox();
+            this.txb_insID = new System.Windows.Forms.TextBox();
+            this.txb_insFname = new System.Windows.Forms.TextBox();
+            this.txb_insLname = new System.Windows.Forms.TextBox();
+            this.txb_insDOB = new System.Windows.Forms.TextBox();
+            this.txb_insGender = new System.Windows.Forms.TextBox();
+            this.txb_insPhone = new System.Windows.Forms.TextBox();
+            this.txb_insPass = new System.Windows.Forms.TextBox();
+            this.txb_insAge = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txb_pass = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dept_textBox = new System.Windows.Forms.TextBox();
+            this.txb_insDept = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.add_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructors)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_instructors
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(494, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 365);
-            this.dataGridView1.TabIndex = 20;
+            this.dgv_instructors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_instructors.Location = new System.Drawing.Point(373, 12);
+            this.dgv_instructors.Name = "dgv_instructors";
+            this.dgv_instructors.RowTemplate.Height = 25;
+            this.dgv_instructors.Size = new System.Drawing.Size(478, 408);
+            this.dgv_instructors.TabIndex = 20;
+            this.dgv_instructors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label8
             // 
@@ -74,85 +75,85 @@ namespace Project.Forms
             this.label8.TabIndex = 21;
             this.label8.Text = "ID :";
             // 
-            // id_textBox
+            // txb_insID
             // 
-            this.id_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.id_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.id_textBox.Location = new System.Drawing.Point(193, 12);
-            this.id_textBox.Multiline = true;
-            this.id_textBox.Name = "id_textBox";
-            this.id_textBox.Size = new System.Drawing.Size(204, 40);
-            this.id_textBox.TabIndex = 22;
+            this.txb_insID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insID.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insID.Location = new System.Drawing.Point(163, 12);
+            this.txb_insID.Multiline = true;
+            this.txb_insID.Name = "txb_insID";
+            this.txb_insID.Size = new System.Drawing.Size(204, 40);
+            this.txb_insID.TabIndex = 22;
             // 
-            // fname_textBox
+            // txb_insFname
             // 
-            this.fname_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.fname_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fname_textBox.Location = new System.Drawing.Point(193, 58);
-            this.fname_textBox.Multiline = true;
-            this.fname_textBox.Name = "fname_textBox";
-            this.fname_textBox.Size = new System.Drawing.Size(204, 40);
-            this.fname_textBox.TabIndex = 23;
+            this.txb_insFname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insFname.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insFname.Location = new System.Drawing.Point(163, 58);
+            this.txb_insFname.Multiline = true;
+            this.txb_insFname.Name = "txb_insFname";
+            this.txb_insFname.Size = new System.Drawing.Size(204, 40);
+            this.txb_insFname.TabIndex = 23;
             // 
-            // Lname_textBox
+            // txb_insLname
             // 
-            this.Lname_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.Lname_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lname_textBox.Location = new System.Drawing.Point(193, 104);
-            this.Lname_textBox.Multiline = true;
-            this.Lname_textBox.Name = "Lname_textBox";
-            this.Lname_textBox.Size = new System.Drawing.Size(204, 40);
-            this.Lname_textBox.TabIndex = 24;
+            this.txb_insLname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insLname.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insLname.Location = new System.Drawing.Point(163, 104);
+            this.txb_insLname.Multiline = true;
+            this.txb_insLname.Name = "txb_insLname";
+            this.txb_insLname.Size = new System.Drawing.Size(204, 40);
+            this.txb_insLname.TabIndex = 24;
             // 
-            // dob_textBox
+            // txb_insDOB
             // 
-            this.dob_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.dob_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dob_textBox.Location = new System.Drawing.Point(193, 150);
-            this.dob_textBox.Multiline = true;
-            this.dob_textBox.Name = "dob_textBox";
-            this.dob_textBox.Size = new System.Drawing.Size(204, 40);
-            this.dob_textBox.TabIndex = 25;
+            this.txb_insDOB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insDOB.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insDOB.Location = new System.Drawing.Point(163, 150);
+            this.txb_insDOB.Multiline = true;
+            this.txb_insDOB.Name = "txb_insDOB";
+            this.txb_insDOB.Size = new System.Drawing.Size(204, 40);
+            this.txb_insDOB.TabIndex = 25;
             // 
-            // gender_textBox
+            // txb_insGender
             // 
-            this.gender_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.gender_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.gender_textBox.Location = new System.Drawing.Point(193, 196);
-            this.gender_textBox.Multiline = true;
-            this.gender_textBox.Name = "gender_textBox";
-            this.gender_textBox.Size = new System.Drawing.Size(204, 40);
-            this.gender_textBox.TabIndex = 26;
+            this.txb_insGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insGender.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insGender.Location = new System.Drawing.Point(163, 196);
+            this.txb_insGender.Multiline = true;
+            this.txb_insGender.Name = "txb_insGender";
+            this.txb_insGender.Size = new System.Drawing.Size(204, 40);
+            this.txb_insGender.TabIndex = 26;
             // 
-            // phone_textBox
+            // txb_insPhone
             // 
-            this.phone_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.phone_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.phone_textBox.Location = new System.Drawing.Point(193, 242);
-            this.phone_textBox.Multiline = true;
-            this.phone_textBox.Name = "phone_textBox";
-            this.phone_textBox.Size = new System.Drawing.Size(204, 40);
-            this.phone_textBox.TabIndex = 27;
+            this.txb_insPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insPhone.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insPhone.Location = new System.Drawing.Point(163, 242);
+            this.txb_insPhone.Multiline = true;
+            this.txb_insPhone.Name = "txb_insPhone";
+            this.txb_insPhone.Size = new System.Drawing.Size(204, 40);
+            this.txb_insPhone.TabIndex = 27;
             // 
-            // score_textBox
+            // txb_insPass
             // 
-            this.score_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.score_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.score_textBox.Location = new System.Drawing.Point(193, 288);
-            this.score_textBox.Multiline = true;
-            this.score_textBox.Name = "score_textBox";
-            this.score_textBox.Size = new System.Drawing.Size(204, 40);
-            this.score_textBox.TabIndex = 28;
+            this.txb_insPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insPass.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insPass.Location = new System.Drawing.Point(163, 288);
+            this.txb_insPass.Multiline = true;
+            this.txb_insPass.Name = "txb_insPass";
+            this.txb_insPass.Size = new System.Drawing.Size(204, 40);
+            this.txb_insPass.TabIndex = 28;
             // 
-            // age_textBox
+            // txb_insAge
             // 
-            this.age_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.age_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.age_textBox.Location = new System.Drawing.Point(193, 334);
-            this.age_textBox.Multiline = true;
-            this.age_textBox.Name = "age_textBox";
-            this.age_textBox.Size = new System.Drawing.Size(204, 40);
-            this.age_textBox.TabIndex = 29;
+            this.txb_insAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insAge.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insAge.Location = new System.Drawing.Point(163, 334);
+            this.txb_insAge.Multiline = true;
+            this.txb_insAge.Name = "txb_insAge";
+            this.txb_insAge.Size = new System.Drawing.Size(204, 40);
+            this.txb_insAge.TabIndex = 29;
             // 
             // label2
             // 
@@ -165,16 +166,16 @@ namespace Project.Forms
             this.label2.TabIndex = 30;
             this.label2.Text = "Age :";
             // 
-            // label1
+            // txb_pass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(23, 304);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 24);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Score";
+            this.txb_pass.AutoSize = true;
+            this.txb_pass.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txb_pass.ForeColor = System.Drawing.Color.Maroon;
+            this.txb_pass.Location = new System.Drawing.Point(23, 304);
+            this.txb_pass.Name = "txb_pass";
+            this.txb_pass.Size = new System.Drawing.Size(92, 24);
+            this.txb_pass.TabIndex = 31;
+            this.txb_pass.Text = "Password";
             // 
             // label3
             // 
@@ -231,15 +232,15 @@ namespace Project.Forms
             this.label7.TabIndex = 36;
             this.label7.Text = "First Name :";
             // 
-            // dept_textBox
+            // txb_insDept
             // 
-            this.dept_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.dept_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dept_textBox.Location = new System.Drawing.Point(193, 380);
-            this.dept_textBox.Multiline = true;
-            this.dept_textBox.Name = "dept_textBox";
-            this.dept_textBox.Size = new System.Drawing.Size(204, 40);
-            this.dept_textBox.TabIndex = 37;
+            this.txb_insDept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.txb_insDept.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txb_insDept.Location = new System.Drawing.Point(163, 380);
+            this.txb_insDept.Multiline = true;
+            this.txb_insDept.Name = "txb_insDept";
+            this.txb_insDept.Size = new System.Drawing.Size(204, 40);
+            this.txb_insDept.TabIndex = 37;
             // 
             // label10
             // 
@@ -294,27 +295,27 @@ namespace Project.Forms
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dept_textBox);
+            this.Controls.Add(this.txb_insDept);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txb_pass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.age_textBox);
-            this.Controls.Add(this.score_textBox);
-            this.Controls.Add(this.phone_textBox);
-            this.Controls.Add(this.gender_textBox);
-            this.Controls.Add(this.dob_textBox);
-            this.Controls.Add(this.Lname_textBox);
-            this.Controls.Add(this.fname_textBox);
-            this.Controls.Add(this.id_textBox);
+            this.Controls.Add(this.txb_insAge);
+            this.Controls.Add(this.txb_insPass);
+            this.Controls.Add(this.txb_insPhone);
+            this.Controls.Add(this.txb_insGender);
+            this.Controls.Add(this.txb_insDOB);
+            this.Controls.Add(this.txb_insLname);
+            this.Controls.Add(this.txb_insFname);
+            this.Controls.Add(this.txb_insID);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_instructors);
             this.Name = "Iins_Form";
             this.Text = "Iins_Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_instructors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,24 +323,24 @@ namespace Project.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_instructors;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox id_textBox;
-        private System.Windows.Forms.TextBox fname_textBox;
-        private System.Windows.Forms.TextBox Lname_textBox;
-        private System.Windows.Forms.TextBox dob_textBox;
-        private System.Windows.Forms.TextBox gender_textBox;
-        private System.Windows.Forms.TextBox phone_textBox;
-        private System.Windows.Forms.TextBox score_textBox;
-        private System.Windows.Forms.TextBox age_textBox;
+        private System.Windows.Forms.TextBox txb_insID;
+        private System.Windows.Forms.TextBox txb_insFname;
+        private System.Windows.Forms.TextBox txb_insLname;
+        private System.Windows.Forms.TextBox txb_insDOB;
+        private System.Windows.Forms.TextBox txb_insGender;
+        private System.Windows.Forms.TextBox txb_insPhone;
+        private System.Windows.Forms.TextBox txb_insPass;
+        private System.Windows.Forms.TextBox txb_insAge;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txb_pass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox dept_textBox;
+        private System.Windows.Forms.TextBox txb_insDept;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button update_btn;
