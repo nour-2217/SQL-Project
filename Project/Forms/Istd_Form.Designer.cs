@@ -30,10 +30,9 @@ namespace Project.Forms
         private void InitializeComponent()
         {
             this.age_textBox = new System.Windows.Forms.TextBox();
-            this.score_textBox = new System.Windows.Forms.TextBox();
+            this.pass_textBox = new System.Windows.Forms.TextBox();
             this.phone_textBox = new System.Windows.Forms.TextBox();
             this.gender_textBox = new System.Windows.Forms.TextBox();
-            this.dob_textBox = new System.Windows.Forms.TextBox();
             this.Lname_textBox = new System.Windows.Forms.TextBox();
             this.fname_textBox = new System.Windows.Forms.TextBox();
             this.id_textBox = new System.Windows.Forms.TextBox();
@@ -45,10 +44,12 @@ namespace Project.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.StudentGridView = new System.Windows.Forms.DataGridView();
             this.add_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).BeginInit();
             this.edit_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,15 +64,15 @@ namespace Project.Forms
             this.age_textBox.Size = new System.Drawing.Size(204, 40);
             this.age_textBox.TabIndex = 3;
             // 
-            // score_textBox
+            // pass_textBox
             // 
-            this.score_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.score_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.score_textBox.Location = new System.Drawing.Point(193, 307);
-            this.score_textBox.Multiline = true;
-            this.score_textBox.Name = "score_textBox";
-            this.score_textBox.Size = new System.Drawing.Size(204, 40);
-            this.score_textBox.TabIndex = 4;
+            this.pass_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.pass_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pass_textBox.Location = new System.Drawing.Point(193, 307);
+            this.pass_textBox.Multiline = true;
+            this.pass_textBox.Name = "pass_textBox";
+            this.pass_textBox.Size = new System.Drawing.Size(204, 40);
+            this.pass_textBox.TabIndex = 4;
             // 
             // phone_textBox
             // 
@@ -92,16 +93,6 @@ namespace Project.Forms
             this.gender_textBox.Name = "gender_textBox";
             this.gender_textBox.Size = new System.Drawing.Size(204, 40);
             this.gender_textBox.TabIndex = 6;
-            // 
-            // dob_textBox
-            // 
-            this.dob_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.dob_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dob_textBox.Location = new System.Drawing.Point(193, 166);
-            this.dob_textBox.Multiline = true;
-            this.dob_textBox.Name = "dob_textBox";
-            this.dob_textBox.Size = new System.Drawing.Size(204, 40);
-            this.dob_textBox.TabIndex = 7;
             // 
             // Lname_textBox
             // 
@@ -151,9 +142,9 @@ namespace Project.Forms
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(23, 323);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 24);
+            this.label1.Size = new System.Drawing.Size(46, 24);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Score";
+            this.label1.Text = "Pass";
             // 
             // label3
             // 
@@ -221,14 +212,15 @@ namespace Project.Forms
             this.label8.TabIndex = 18;
             this.label8.Text = "ID :";
             // 
-            // dataGridView1
+            // StudentGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(494, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(310, 365);
-            this.dataGridView1.TabIndex = 19;
+            this.StudentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentGridView.Location = new System.Drawing.Point(494, 28);
+            this.StudentGridView.Name = "StudentGridView";
+            this.StudentGridView.RowTemplate.Height = 25;
+            this.StudentGridView.Size = new System.Drawing.Size(310, 365);
+            this.StudentGridView.TabIndex = 19;
+            this.StudentGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StudentGridView_CellClick);
             // 
             // add_btn
             // 
@@ -240,6 +232,7 @@ namespace Project.Forms
             this.add_btn.TabIndex = 20;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // delete_btn
             // 
@@ -251,6 +244,7 @@ namespace Project.Forms
             this.delete_btn.TabIndex = 21;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // update_btn
             // 
@@ -262,6 +256,15 @@ namespace Project.Forms
             this.update_btn.TabIndex = 22;
             this.update_btn.Text = "Update";
             this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.dateTimePicker1.Location = new System.Drawing.Point(193, 182);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 23;
             // 
             // edit_btn
             // 
@@ -280,11 +283,12 @@ namespace Project.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 484);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.update_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.StudentGridView);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -296,14 +300,14 @@ namespace Project.Forms
             this.Controls.Add(this.id_textBox);
             this.Controls.Add(this.fname_textBox);
             this.Controls.Add(this.Lname_textBox);
-            this.Controls.Add(this.dob_textBox);
             this.Controls.Add(this.gender_textBox);
             this.Controls.Add(this.phone_textBox);
-            this.Controls.Add(this.score_textBox);
+            this.Controls.Add(this.pass_textBox);
             this.Controls.Add(this.age_textBox);
             this.Name = "Istd_Form";
             this.Text = "Istd_Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Istd_Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.StudentGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,10 +316,9 @@ namespace Project.Forms
         #endregion
 
         private System.Windows.Forms.TextBox age_textBox;
-        private System.Windows.Forms.TextBox score_textBox;
+        private System.Windows.Forms.TextBox pass_textBox;
         private System.Windows.Forms.TextBox phone_textBox;
         private System.Windows.Forms.TextBox gender_textBox;
-        private System.Windows.Forms.TextBox dob_textBox;
         private System.Windows.Forms.TextBox Lname_textBox;
         private System.Windows.Forms.TextBox fname_textBox;
         private System.Windows.Forms.TextBox id_textBox;
@@ -327,10 +330,11 @@ namespace Project.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView StudentGridView;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button edit_btn;
     }
 }
