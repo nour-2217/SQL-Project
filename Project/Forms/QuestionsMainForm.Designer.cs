@@ -53,7 +53,7 @@
             this.QuestionsGrid.RowTemplate.Height = 25;
             this.QuestionsGrid.Size = new System.Drawing.Size(450, 438);
             this.QuestionsGrid.TabIndex = 21;
-            this.QuestionsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionsGrid_CellClick);
+            this.QuestionsGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.QuestionsGrid_RowHeaderMouseClick);
             // 
             // ID
             // 
@@ -128,6 +128,7 @@
             this.Description.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Description.Location = new System.Drawing.Point(177, 224);
             this.Description.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Description.MaxLength = 64000;
             this.Description.Multiline = true;
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(300, 111);

@@ -38,21 +38,20 @@ namespace Project.Forms
             ChoicesCallUpdates();
         }
 
-        private void QuestionsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void QuestionsGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var RowIndex = e.RowIndex;
-            DataGridViewRow Row = QuestionsGrid.Rows[RowIndex];
-            QuestionID.Text = Row.Cells[0].Value.ToString();
+            DataGridViewRow Row = QuestionsGrid.Rows[e.RowIndex];
+
+            QuestionID.Text = Row.Cells["ID"].Value.ToString();
         }
 
-        private void ChoicesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ChoicesGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var RowIndex = e.RowIndex;
-            DataGridViewRow Row = QuestionsGrid.Rows[RowIndex];
-            ChoiceID.Text = Row.Cells[0].Value.ToString();
-            Flag.Text = Row.Cells[1].Value.ToString();
-            Description.Text = Row.Cells[2].Value.ToString();
-            QuestionID.Text = Row.Cells[3].Value.ToString();
+            DataGridViewRow Row = ChoicesGrid.Rows[e.RowIndex];
+
+            ChoiceID.Text = Row.Cells["ID"].Value.ToString();
+            Flag.Text = Row.Cells["Flag"].Value.ToString();
+            Description.Text = Row.Cells["Description"].Value.ToString();
         }
 
         private void update_btn_Click(object sender, EventArgs e)

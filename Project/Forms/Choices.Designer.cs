@@ -56,7 +56,7 @@
             this.QuestionsGrid.RowTemplate.Height = 25;
             this.QuestionsGrid.Size = new System.Drawing.Size(450, 212);
             this.QuestionsGrid.TabIndex = 22;
-            this.QuestionsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QuestionsGrid_CellContentClick);
+            this.QuestionsGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.QuestionsGrid_RowHeaderMouseClick);
             // 
             // ChoicesGrid
             // 
@@ -66,9 +66,10 @@
             this.ChoicesGrid.Name = "ChoicesGrid";
             this.ChoicesGrid.RowHeadersWidth = 51;
             this.ChoicesGrid.RowTemplate.Height = 25;
+            this.ChoicesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ChoicesGrid.Size = new System.Drawing.Size(450, 349);
             this.ChoicesGrid.TabIndex = 23;
-            this.ChoicesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChoicesGrid_CellContentClick);
+            this.ChoicesGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ChoicesGrid_RowHeaderMouseClick);
             // 
             // QIDLabel
             // 
@@ -205,6 +206,7 @@
             this.Description.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Description.Location = new System.Drawing.Point(204, 436);
             this.Description.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Description.MaxLength = 64000;
             this.Description.Multiline = true;
             this.Description.Name = "Description";
             this.Description.Size = new System.Drawing.Size(273, 129);

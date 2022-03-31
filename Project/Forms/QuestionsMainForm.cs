@@ -24,14 +24,14 @@ namespace Project.Forms
             InitializeComponent();
         }
 
-        private void QuestionsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void QuestionsGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var RowIndex = e.RowIndex;
-            DataGridViewRow Row = QuestionsGrid.Rows[RowIndex];
-            ID.Text = Row.Cells[0].Value.ToString();
-            Type.Text = Row.Cells[1].Value.ToString();
-            Description.Text = Row.Cells[2].Value.ToString();
-            Topic.Text = Row.Cells[3].Value.ToString();
+            DataGridViewRow Row = QuestionsGrid.Rows[e.RowIndex];
+
+            ID.Text = Row.Cells["ID"].Value.ToString();
+            Type.Text = Row.Cells["Type"].Value.ToString();
+            Description.Text = Row.Cells["Description"].Value.ToString();
+            Topic.Text = Row.Cells["Topic_FK"].Value.ToString();
         }
 
         private void QuestionsMainForm_Load(object sender, EventArgs e)
