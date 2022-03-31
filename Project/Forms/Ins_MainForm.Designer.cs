@@ -51,9 +51,9 @@ namespace Project.Forms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CloseAppbtn);
-            this.panel1.Location = new System.Drawing.Point(242, 1);
+            this.panel1.Location = new System.Drawing.Point(251, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(888, 118);
+            this.panel1.Size = new System.Drawing.Size(879, 118);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -71,7 +71,7 @@ namespace Project.Forms
             // 
             this.CloseAppbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseAppbtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseAppbtn.Image")));
-            this.CloseAppbtn.Location = new System.Drawing.Point(856, 0);
+            this.CloseAppbtn.Location = new System.Drawing.Point(847, 0);
             this.CloseAppbtn.Name = "CloseAppbtn";
             this.CloseAppbtn.Size = new System.Drawing.Size(32, 23);
             this.CloseAppbtn.TabIndex = 0;
