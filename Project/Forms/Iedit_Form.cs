@@ -38,14 +38,14 @@ namespace Project.Forms
 
         private void load()
         {
-            //SqlCommand Command = new SqlCommand("Instructor_Topic '"+
-            //                                                id_textBox.Text + "','" +
-            //                                                topic_textBox.Text + "'"
-            //                                                , LogInForm.Connection);
-            //SqlDataReader SqlOutput = Command.ExecuteReader();
-            //DataTable Instructor_TopicTable = new DataTable();
-            //Instructor_TopicTable.Load(SqlOutput);
-            //InsEditGridView.DataSource = Instructor_TopicTable;
+            SqlCommand Command = new SqlCommand("Instructor_Topic '" +
+                                                            id_textBox.Text + "'" 
+                                                            
+                                                            , LogInForm.Connection);
+            SqlDataReader SqlOutput = Command.ExecuteReader();
+            DataTable Instructor_TopicTable = new DataTable();
+            Instructor_TopicTable.Load(SqlOutput);
+            InsEditGridView.DataSource = Instructor_TopicTable;
         }
 
         private void Iedit_Form_Load(object sender, EventArgs e)
@@ -63,13 +63,15 @@ namespace Project.Forms
             }
             else
             {
-                SqlCommand Insert_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Insert '" +
-                                                            id_textBox.Text + "','" +
-                                                            topic_textBox.Text + "'", LogInForm.Connection);
+                SqlCommand Command = new SqlCommand("Instructors_Teaches_Topics_Insert '" +
+                                                                id_textBox.Text + "','" +
+                                                                topic_textBox.Text + "'"
+                                                                , LogInForm.Connection);
+                SqlDataReader SqlOutput = Command.ExecuteReader();
+                DataTable Instructors_Teaches_Topics_TopicTable = new DataTable();
+                Instructors_Teaches_Topics_TopicTable.Load(SqlOutput);
+                InsEditGridView.DataSource = Instructors_Teaches_Topics_TopicTable;
 
-                int Affected_Rows = Insert_Inst_Teach.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = string.Empty;
                 load();
             }
         }

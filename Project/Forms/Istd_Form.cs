@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -26,7 +27,14 @@ namespace Project.Forms
         {
             Sedit_Form Sedit_form = new Sedit_Form();
             Sedit_form.Show();
-            
+            Sedit_form.setid = id_textBox.Text;
+            SqlCommand Command = new SqlCommand("exec dbo.Student_Topic '" +
+                                                            id_textBox.Text + "'"
+                                                            , LogInForm.Connection);
+            SqlDataReader SqlOutput = Command.ExecuteReader();
+            DataTable Student_TopicTable = new DataTable();
+            Student_TopicTable.Load(SqlOutput);
+            Sedit_form.studatagrid.DataSource = Student_TopicTable;
         }
     }
 }
