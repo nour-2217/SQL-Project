@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 
 namespace Project
 {
+    public enum Role {Admin, Instructor, Student, none };
     public partial class LogInForm : Form
     {
         public LogInForm()
@@ -24,16 +25,42 @@ namespace Project
         {
             if (Ins_radioButton.Checked == true)
             {
-                Ins_MainForm I_mainForm = new Ins_MainForm();
-                I_mainForm.Show();
-                this.Hide();
+                string Statement = $"CheckPassword {1}, '{textBox1.Text}', '{textBox2.Text}'";
+                SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
+                SqlDataReader SqlOutput = Command.ExecuteReader();
+                DataTable UserLogin = new DataTable();
+                UserLogin.Load(SqlOutput);
+                if(UserLogin.Rows.Count == 1)
+                {
+                    Ins_MainForm I_mainForm = new Ins_MainForm();
+                    I_mainForm.Show();
+                    LoggedInRole = Role.Student;
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong username or password!");
+                }
             }
 
             else if (Std_radioButton.Checked == true)
             {
-                Std_MainForm S_mainForm = new Std_MainForm();
-                S_mainForm.Show();
-                this.Hide();
+                string Statement = $"CheckPassword {2}, '{textBox1.Text}', '{textBox2.Text}'";
+                SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
+                SqlDataReader SqlOutput = Command.ExecuteReader();
+                DataTable UserLogin = new DataTable();
+                UserLogin.Load(SqlOutput);
+                if (UserLogin.Rows.Count == 1)
+                {
+                    Std_MainForm S_mainForm = new Std_MainForm();
+                    S_mainForm.Show();
+                    LoggedInRole = int.Parse(UserLogin.Rows[0]["Admin"].ToString()) == 1 ? Role.Admin : Role.Instructor;
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong username or password!");
+                }
             }
         }
 
