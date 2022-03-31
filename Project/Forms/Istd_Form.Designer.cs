@@ -336,5 +336,6 @@ namespace Project.Forms
         private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.DataGridView dataGridView1 = new System.Windows.Forms.DataGridView();
     }
 }
