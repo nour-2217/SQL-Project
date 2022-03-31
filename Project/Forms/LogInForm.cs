@@ -34,7 +34,7 @@ namespace Project
                 {
                     Ins_MainForm I_mainForm = new Ins_MainForm();
                     I_mainForm.Show();
-                    LoggedInRole = int.Parse(UserLogin.Rows[0]["Admin"].ToString()) == 1 ? Role.Admin : Role.Instructor;
+                    oggedInRole = UserLogin.Rows[0]["Admin"].ToString() == "True" ? Role.Admin : Role.Instructor;
                     this.Hide();
                 }
                 else
