@@ -14,11 +14,19 @@ namespace Project.Forms
         {
             InitializeComponent();
         }
+        public string stid
+        {
+            get
+            {
+                return id_textBox.Text;
+            }
+        }
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
             Sedit_Form Sedit_form = new Sedit_Form();
             Sedit_form.Show();
+            
         }
     }
 }

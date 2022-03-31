@@ -53,6 +53,7 @@ namespace Project.Forms
             // name_textBox
             // 
             this.name_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.name_textBox.Enabled = false;
             this.name_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.name_textBox.Location = new System.Drawing.Point(154, 144);
             this.name_textBox.Multiline = true;
@@ -63,6 +64,7 @@ namespace Project.Forms
             // id_textBox
             // 
             this.id_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.id_textBox.Enabled = false;
             this.id_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.id_textBox.Location = new System.Drawing.Point(154, 58);
             this.id_textBox.Multiline = true;

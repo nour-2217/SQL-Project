@@ -20,16 +20,22 @@ namespace Project.Forms
 
         private void load()
         {
-            SqlCommand Command = new SqlCommand("SELECT * FROM dbo.Students_Takes_Topics", LogInForm.Connection);
+            SqlCommand Command = new SqlCommand("exec dbo.Student_Topic '" +
+                                                            id_textBox.Text + ",'" +                              
+                                                            topic_textBox.Text + "'" 
+                                                            , LogInForm.Connection);
             SqlDataReader SqlOutput = Command.ExecuteReader();
-            DataTable CourseTable = new DataTable();
-            CourseTable.Load(SqlOutput);
-            StdEditGridView.DataSource = CourseTable;
+            DataTable Student_TopicTable = new DataTable();
+            Student_TopicTable.Load(SqlOutput);
+            StdEditGridView.DataSource = Student_TopicTable;
         }
 
         private void Sedit_Form_Load(object sender, EventArgs e)
         {
+            id_textBox.Enabled = false;
+            name_textBox.Enabled = false;
             load();
+
         }
 
         private void add_btn_Click(object sender, EventArgs e)
