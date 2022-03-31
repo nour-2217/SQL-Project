@@ -32,26 +32,24 @@ namespace Project.Forms
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (id_textBox.Text == "" || fname_textBox.Text == "" || Lname_textBox.Text == "" || dob_textBox.Text == ""
-                 || gender_textBox.Text == "" || phone_textBox.Text == "" || password_textBox.Text == "" || age_textBox.Text == "" || dept_textBox.Text == "")
+            if (fname_textBox.Text == "" || Lname_textBox.Text == "" || dob_textBox.Text == ""
+                 || gender_textBox.Text == "" || phone_textBox.Text == "" || password_textBox.Text == "" || dept_textBox.Text == "")
             {
                 MessageBox.Show("Please, Enter the full data");
             }
             else
             {
-                SqlCommand Insert_Instructor = new SqlCommand("exec dbo.Instructor_Insert " +
-                                                            id_textBox.Text + ",'" +
+                SqlCommand Insert_Instructor = new SqlCommand("exec dbo.Instructor_Insert '" +
                                                             fname_textBox.Text + "','" +
                                                             Lname_textBox.Text + "','" +
-                                                            dob_textBox.Text + "','" +
                                                             gender_textBox.Text + "','" +
                                                             phone_textBox.Text + "','" +
                                                             password_textBox.Text + "','" +
-                                                            age_textBox.Text + "','" +
+                                                            Convert.ToDateTime(dob_textBox.Text) + "','" +
                                                             dept_textBox.Text + "'", LogInForm.Connection);
 
                 int Affected_Rows = Insert_Instructor.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows inserted.");
                 id_textBox.Text = fname_textBox.Text = Lname_textBox.Text = dob_textBox.Text = gender_textBox.Text
                      = phone_textBox.Text = password_textBox.Text = age_textBox.Text = dept_textBox.Text = string.Empty;
                 load();
@@ -67,25 +65,24 @@ namespace Project.Forms
         private void update_btn_Click(object sender, EventArgs e)
         {
             if (id_textBox.Text == "" || fname_textBox.Text == "" || Lname_textBox.Text == "" || dob_textBox.Text == ""
-                 || gender_textBox.Text == "" || phone_textBox.Text == "" || password_textBox.Text == "" || age_textBox.Text == "" || dept_textBox.Text == "")
+                 || gender_textBox.Text == "" || phone_textBox.Text == "" || password_textBox.Text == "" || dept_textBox.Text == "")
             {
                 MessageBox.Show("Please, Enter the full data");
             }
             else
             {
-                SqlCommand Update_Instructor = new SqlCommand("exec dbo.Instructor_Update " +
-                                                            id_textBox.Text + ",'" +
+                SqlCommand Update_Instructor = new SqlCommand("exec dbo.Instructor_Update '" +
+                                                            id_textBox.Text + "','" +
                                                             fname_textBox.Text + "','" +
                                                             Lname_textBox.Text + "','" +
                                                             dob_textBox.Text + "','" +
                                                             gender_textBox.Text + "','" +
                                                             phone_textBox.Text + "','" +
                                                             password_textBox.Text + "','" +
-                                                            age_textBox.Text + "','" +
                                                             dept_textBox.Text + "'", LogInForm.Connection);
 
                 int Affected_Rows = Update_Instructor.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows updated.");
                 id_textBox.Text = fname_textBox.Text = Lname_textBox.Text = dob_textBox.Text = gender_textBox.Text
                      = phone_textBox.Text = password_textBox.Text = age_textBox.Text = dept_textBox.Text = string.Empty;
                 load();
@@ -100,9 +97,9 @@ namespace Project.Forms
             }
             else
             {
-                SqlCommand Delete_Instructor = new SqlCommand("exec dbo.Instructor_Delete" + int.Parse(id_textBox.Text), LogInForm.Connection);
+                SqlCommand Delete_Instructor = new SqlCommand("exec dbo.Instructor_Delete '" + int.Parse(id_textBox.Text) + "'", LogInForm.Connection);
                 int Affected_Rows = Delete_Instructor.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows deleted.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows deleted.");
                 id_textBox.Text = fname_textBox.Text = Lname_textBox.Text = dob_textBox.Text = gender_textBox.Text
                      = phone_textBox.Text = password_textBox.Text = age_textBox.Text = dept_textBox.Text = string.Empty;
                 load();
