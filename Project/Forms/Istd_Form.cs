@@ -22,12 +22,14 @@ namespace Project.Forms
                 return id_textBox.Text;
             }
         }
+       
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
             Sedit_Form Sedit_form = new Sedit_Form();
             Sedit_form.Show();
             Sedit_form.setid = id_textBox.Text;
+            Sedit_form.name = fname_textBox.Text;
             SqlCommand Command1 = new SqlCommand("Topic_SelectAll", LogInForm.Connection);
             SqlDataReader SqlOutput1 = Command1.ExecuteReader();
             DataTable ID_TopicTable = new DataTable();

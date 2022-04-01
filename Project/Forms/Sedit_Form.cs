@@ -42,6 +42,17 @@ namespace Project.Forms
                 return comboBox1;
             }
         }
+        public string name
+        {
+            get
+            {
+                return name_textBox.Text;
+            }
+            set
+            {
+                name_textBox.Text = value;
+            }
+        }
 
         private void load()
         {

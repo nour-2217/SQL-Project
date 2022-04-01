@@ -70,6 +70,7 @@ namespace Project.Forms
             Iedit_Form Iedit_form = new Iedit_Form();
             Iedit_form.Show();
             Iedit_form.setID = id_textBox.Text;
+            Iedit_form.name = fname_textBox.Text;
             SqlCommand Command1 = new SqlCommand("Topic_SelectAll", LogInForm.Connection);
             SqlDataReader SqlOutput1 = Command1.ExecuteReader();
             DataTable ID_TopicTable = new DataTable();
