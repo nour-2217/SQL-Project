@@ -37,7 +37,7 @@ namespace Project.Forms
             this.add_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.topic_textBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.InsEditGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,10 +55,10 @@ namespace Project.Forms
             this.name_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
             this.name_textBox.Enabled = false;
             this.name_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name_textBox.Location = new System.Drawing.Point(154, 144);
+            this.name_textBox.Location = new System.Drawing.Point(179, 157);
             this.name_textBox.Multiline = true;
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(204, 40);
+            this.name_textBox.Size = new System.Drawing.Size(204, 24);
             this.name_textBox.TabIndex = 23;
             // 
             // id_textBox
@@ -66,10 +66,10 @@ namespace Project.Forms
             this.id_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
             this.id_textBox.Enabled = false;
             this.id_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.id_textBox.Location = new System.Drawing.Point(154, 58);
+            this.id_textBox.Location = new System.Drawing.Point(179, 65);
             this.id_textBox.Multiline = true;
             this.id_textBox.Name = "id_textBox";
-            this.id_textBox.Size = new System.Drawing.Size(204, 40);
+            this.id_textBox.Size = new System.Drawing.Size(204, 23);
             this.id_textBox.TabIndex = 24;
             // 
             // label8
@@ -77,7 +77,7 @@ namespace Project.Forms
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(36, 160);
+            this.label8.Location = new System.Drawing.Point(33, 158);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 24);
             this.label8.TabIndex = 25;
@@ -88,11 +88,11 @@ namespace Project.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(36, 74);
+            this.label1.Location = new System.Drawing.Point(33, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 24);
+            this.label1.Size = new System.Drawing.Size(128, 24);
             this.label1.TabIndex = 26;
-            this.label1.Text = "ID :";
+            this.label1.Text = "Instructor id:";
             // 
             // add_btn
             // 
@@ -123,28 +123,27 @@ namespace Project.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(36, 254);
+            this.label2.Location = new System.Drawing.Point(33, 253);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 24);
+            this.label2.Size = new System.Drawing.Size(94, 24);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Topic :";
+            this.label2.Text = "Topic id :";
             // 
-            // topic_textBox
+            // comboBox1
             // 
-            this.topic_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
-            this.topic_textBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.topic_textBox.Location = new System.Drawing.Point(154, 238);
-            this.topic_textBox.Multiline = true;
-            this.topic_textBox.Name = "topic_textBox";
-            this.topic_textBox.Size = new System.Drawing.Size(204, 40);
-            this.topic_textBox.TabIndex = 30;
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(175)))), ((int)(((byte)(157)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 243);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(204, 23);
+            this.comboBox1.TabIndex = 31;
             // 
             // Iedit_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.topic_textBox);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.add_btn);
@@ -175,6 +174,6 @@ namespace Project.Forms
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView InsEditGridView;
         private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.TextBox topic_textBox;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -35,6 +35,13 @@ namespace Project.Forms
                 return StdEditGridView;
             }
         }
+        public ComboBox cid
+        {
+            get
+            {
+                return comboBox1;
+            }
+        }
 
         private void load()
         {
@@ -58,12 +65,12 @@ namespace Project.Forms
             {
                 SqlCommand Insert_Std_Take = new SqlCommand("exec dbo.Students_Takes_Topics_Insert '" +
                                                             id_textBox.Text + "','" +
-                                                            topic_textBox.Text + "'"
+                                                            comboBox1.SelectedItem.ToString() + "'"
                                                             , LogInForm.Connection);
 
                 int Affected_Rows = Insert_Std_Take.ExecuteNonQuery();
                 MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = grade_textBox.Text = string.Empty;
+                comboBox1.Text = grade_textBox.Text = string.Empty;
                 load();
             }
         }
@@ -79,7 +86,7 @@ namespace Project.Forms
                 SqlCommand Delete_Std_Take = new SqlCommand("exec dbo.Students_Takes_Topics_Delete" + int.Parse(id_textBox.Text), LogInForm.Connection);
                 int Affected_Rows = Delete_Std_Take.ExecuteNonQuery();
                 MessageBox.Show(Affected_Rows.ToString() + " Rows deleted.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = grade_textBox.Text = string.Empty;
+                name_textBox.Text = comboBox1.Text = grade_textBox.Text = string.Empty;
                 load();
             }
         }

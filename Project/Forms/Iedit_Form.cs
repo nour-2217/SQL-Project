@@ -35,6 +35,13 @@ namespace Project.Forms
                 id_textBox.Text = value;
             }
         }
+        public ComboBox cid
+        {
+            get
+            {
+                return comboBox1;
+            }
+        }
 
         private void load()
         {
@@ -49,15 +56,13 @@ namespace Project.Forms
         }
 
         private void Iedit_Form_Load(object sender, EventArgs e)
-        {
-            id_textBox.Enabled = false;
-            name_textBox.Enabled = false;
+        {           
             load();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (topic_textBox.Text == "")
+            if (comboBox1.Text == "")
             {
                 MessageBox.Show("Please, Enter the full data");
             }
@@ -65,13 +70,12 @@ namespace Project.Forms
             {
                 SqlCommand Command = new SqlCommand("Instructors_Teaches_Topics_Insert '" +
                                                                 id_textBox.Text + "','" +
-                                                                topic_textBox.Text + "'"
+                                                                comboBox1.SelectedItem.ToString() + "'"
                                                                 , LogInForm.Connection);
                 SqlDataReader SqlOutput = Command.ExecuteReader();
                 DataTable Instructors_Teaches_Topics_TopicTable = new DataTable();
                 Instructors_Teaches_Topics_TopicTable.Load(SqlOutput);
                 InsEditGridView.DataSource = Instructors_Teaches_Topics_TopicTable;
-
                 load();
             }
         }
@@ -84,10 +88,10 @@ namespace Project.Forms
             }
             else
             {
-                SqlCommand Delete_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Delete '" + id_textBox.Text + "','"+ topic_textBox.Text+"'", LogInForm.Connection);
+                SqlCommand Delete_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Delete '" + id_textBox.Text + "','"+ comboBox1.SelectedItem.ToString()+"'", LogInForm.Connection);
                 int Affected_Rows = Delete_Inst_Teach.ExecuteNonQuery();
                 MessageBox.Show(Affected_Rows.ToString() + " Rows deleted.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = string.Empty;
+                comboBox1.Text = string.Empty;
                 load();
             }
         }

@@ -28,6 +28,15 @@ namespace Project.Forms
             Sedit_Form Sedit_form = new Sedit_Form();
             Sedit_form.Show();
             Sedit_form.setid = id_textBox.Text;
+            SqlCommand Command1 = new SqlCommand("Topic_SelectAll", LogInForm.Connection);
+            SqlDataReader SqlOutput1 = Command1.ExecuteReader();
+            DataTable ID_TopicTable = new DataTable();
+            ID_TopicTable.Load(SqlOutput1);
+            foreach (DataRow dr in ID_TopicTable.Rows)
+            {
+                Sedit_form.cid.Items.Add(dr[0]);
+            }
+            SqlOutput1.Close();
             SqlCommand Command = new SqlCommand("exec dbo.Student_Topic '" +
                                                             id_textBox.Text + "'"
                                                             , LogInForm.Connection);
