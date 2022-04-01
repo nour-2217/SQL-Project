@@ -130,6 +130,19 @@ namespace Project.Forms
             }
         }
 
-        
+        private void InstructorGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = InstructorGridView.CurrentCell.RowIndex;
+
+            id_textBox.Text = InstructorGridView.Rows[rowindex].Cells[0].Value.ToString();
+            fname_textBox.Text = InstructorGridView.Rows[rowindex].Cells[1].Value.ToString();
+            Lname_textBox.Text = InstructorGridView.Rows[rowindex].Cells[2].Value.ToString();
+            gender_textBox.Text = InstructorGridView.Rows[rowindex].Cells[4].Value.ToString();
+            phone_textBox.Text = InstructorGridView.Rows[rowindex].Cells[5].Value.ToString();
+            password_textBox.Text = InstructorGridView.Rows[rowindex].Cells[6].Value.ToString();
+            dob_textBox.Text = InstructorGridView.Rows[rowindex].Cells[7].Value.ToString();
+            age_textBox.Text = InstructorGridView.Rows[rowindex].Cells[8].Value.ToString();
+            dept_textBox.Text = InstructorGridView.Rows[rowindex].Cells[9].Value.ToString();
+        }
     }
 }

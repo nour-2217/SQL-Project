@@ -87,6 +87,13 @@ namespace Project.Forms
             }
         }
 
-        
+        private void DepartmentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = DepartmentGridView.CurrentCell.RowIndex;
+
+            id_textBox.Text = DepartmentGridView.Rows[rowindex].Cells[0].Value.ToString();
+            name_textBox.Text = DepartmentGridView.Rows[rowindex].Cells[1].Value.ToString();
+            loc_textBox.Text = DepartmentGridView.Rows[rowindex].Cells[2].Value.ToString();
+        }
     }
 }

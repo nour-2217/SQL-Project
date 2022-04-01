@@ -52,6 +52,7 @@ namespace Project.Forms
             this.TopicGridView.RowTemplate.Height = 25;
             this.TopicGridView.Size = new System.Drawing.Size(310, 365);
             this.TopicGridView.TabIndex = 21;
+            this.TopicGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TopicGridView_CellContentClick);
             // 
             // id_textBox
             // 

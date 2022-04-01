@@ -82,5 +82,14 @@ namespace Project.Forms
                 load();
             }
         }
+
+        private void CourseGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = CourseGridView.CurrentCell.RowIndex;
+
+            id_textBox.Text = CourseGridView.Rows[rowindex].Cells[0].Value.ToString();
+            name_textBox.Text = CourseGridView.Rows[rowindex].Cells[1].Value.ToString();
+            duration_textBox.Text = CourseGridView.Rows[rowindex].Cells[2].Value.ToString();
+        }
     }
 }

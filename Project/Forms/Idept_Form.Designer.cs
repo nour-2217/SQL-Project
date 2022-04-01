@@ -50,6 +50,7 @@ namespace Project.Forms
             this.DepartmentGridView.RowTemplate.Height = 25;
             this.DepartmentGridView.Size = new System.Drawing.Size(310, 365);
             this.DepartmentGridView.TabIndex = 20;
+            this.DepartmentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DepartmentGridView_CellContentClick);
             // 
             // loc_textBox
             // 
