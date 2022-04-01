@@ -17,37 +17,76 @@ namespace Project.Forms
         {
             InitializeComponent();
         }
+        public DataGridView iedit
+        {
+            get
+            {
+                return InsEditGridView;
+            }
+        }
+        public string setID
+        {
+            get
+            {
+                return id_textBox.Text;
+            }
+            set
+            {
+                id_textBox.Text = value;
+            }
+        }
+        public ComboBox cid
+        {
+            get
+            {
+                return comboBox1;
+            }
+        }
+        public string name
+        {
+            get
+            {
+                return name_textBox.Text;
+            }
+            set
+            {
+                name_textBox.Text = value;
+            }
+        }
 
         private void load()
         {
-            SqlCommand Command = new SqlCommand("SELECT * FROM dbo.Instructors_Teaches_Topics", LogInForm.Connection);
+            SqlCommand Command = new SqlCommand("Instructor_Topic '" +
+                                                            id_textBox.Text + "'" 
+                                                            
+                                                            , LogInForm.Connection);
             SqlDataReader SqlOutput = Command.ExecuteReader();
-            DataTable CourseTable = new DataTable();
-            CourseTable.Load(SqlOutput);
-            InsEditGridView.DataSource = CourseTable;
+            DataTable Instructor_TopicTable = new DataTable();
+            Instructor_TopicTable.Load(SqlOutput);
+            InsEditGridView.DataSource = Instructor_TopicTable;
         }
 
         private void Iedit_Form_Load(object sender, EventArgs e)
-        {
+        {           
             load();
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (id_textBox.Text == "" || name_textBox.Text == "" || topic_textBox.Text == "")
+            if (comboBox1.Text == "")
             {
                 MessageBox.Show("Please, Enter the full data");
             }
             else
             {
-                SqlCommand Insert_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Insert " +
-                                                            id_textBox.Text + ",'" +
-                                                            name_textBox.Text + "','" +
-                                                            topic_textBox.Text + "'", LogInForm.Connection);
-
-                int Affected_Rows = Insert_Inst_Teach.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = string.Empty;
+                SqlCommand Command = new SqlCommand("Instructors_Teaches_Topics_Insert '" +
+                                                                id_textBox.Text + "','" +
+                                                                comboBox1.SelectedItem.ToString() + "'"
+                                                                , LogInForm.Connection);
+                SqlDataReader SqlOutput = Command.ExecuteReader();
+                DataTable Instructors_Teaches_Topics_TopicTable = new DataTable();
+                Instructors_Teaches_Topics_TopicTable.Load(SqlOutput);
+                InsEditGridView.DataSource = Instructors_Teaches_Topics_TopicTable;
                 load();
             }
         }
@@ -60,10 +99,10 @@ namespace Project.Forms
             }
             else
             {
-                SqlCommand Delete_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Delete" + int.Parse(id_textBox.Text), LogInForm.Connection);
+                SqlCommand Delete_Inst_Teach = new SqlCommand("exec dbo.Instructors_Teaches_Topics_Delete '" + id_textBox.Text + "','"+ comboBox1.SelectedItem.ToString()+"'", LogInForm.Connection);
                 int Affected_Rows = Delete_Inst_Teach.ExecuteNonQuery();
                 MessageBox.Show(Affected_Rows.ToString() + " Rows deleted.");
-                id_textBox.Text = name_textBox.Text = topic_textBox.Text = string.Empty;
+                comboBox1.Text = string.Empty;
                 load();
             }
         }

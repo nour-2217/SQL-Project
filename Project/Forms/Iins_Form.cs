@@ -15,6 +15,13 @@ namespace Project.Forms
         {
             InitializeComponent();
         }
+        public string ID
+        {
+            get
+            {
+                return id_textBox.Text;
+            }
+        }
 
         private void load()
         {
@@ -62,6 +69,23 @@ namespace Project.Forms
         {
             Iedit_Form Iedit_form = new Iedit_Form();
             Iedit_form.Show();
+            Iedit_form.setID = id_textBox.Text;
+            Iedit_form.name = fname_textBox.Text;
+            SqlCommand Command1 = new SqlCommand("Topic_SelectAll", LogInForm.Connection);
+            SqlDataReader SqlOutput1 = Command1.ExecuteReader();
+            DataTable ID_TopicTable = new DataTable();
+            ID_TopicTable.Load(SqlOutput1);
+            foreach (DataRow dr in ID_TopicTable.Rows)
+            {
+                Iedit_form.cid.Items.Add(dr[0]);
+            }
+            SqlOutput1.Close();
+            SqlCommand Command = new SqlCommand("Instructor_Topic '" + id_textBox.Text + "'", LogInForm.Connection);
+            SqlDataReader SqlOutput = Command.ExecuteReader();
+            DataTable Instructor_TopicTable = new DataTable();
+            Instructor_TopicTable.Load(SqlOutput);
+            Iedit_form.iedit.DataSource = Instructor_TopicTable;
+            //SqlOutput.Close();
         }
 
         private void update_btn_Click(object sender, EventArgs e)

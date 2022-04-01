@@ -32,16 +32,16 @@ namespace Project.Forms
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (id_textBox.Text == "" || name_textBox.Text == "" || duration_textBox.Text == "")
+            if (name_textBox.Text == "")
             {
                 MessageBox.Show("Please, Enter the full data");
             }
             else
             {
-                SqlCommand Insert_Course = new SqlCommand("exec dbo.Course_Insert " +
-                                                            id_textBox.Text + ",'" +
-                                                            name_textBox.Text + "','" +
-                                                            duration_textBox.Text + "'", LogInForm.Connection);
+                SqlCommand Insert_Course = new SqlCommand("exec dbo.Course_Insert '" +
+                                                            
+                                                            name_textBox.Text + "'" 
+                                                            , LogInForm.Connection);
 
                 int Affected_Rows = Insert_Course.ExecuteNonQuery();
                 MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
