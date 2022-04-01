@@ -34,17 +34,15 @@ namespace Project.Forms
         {
             if (name_textBox.Text == "")
             {
-                MessageBox.Show("Please, Enter the full data");
+                MessageBox.Show("Please, Enter the name of the course.");
             }
             else
             {
                 SqlCommand Insert_Course = new SqlCommand("exec dbo.Course_Insert '" +
-                                                            
-                                                            name_textBox.Text + "'" 
-                                                            , LogInForm.Connection);
+                                                            name_textBox.Text + "'", LogInForm.Connection);
 
                 int Affected_Rows = Insert_Course.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows insertedd.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows inserted.");
                 id_textBox.Text = name_textBox.Text = duration_textBox.Text = string.Empty;
                 load();
             }
@@ -52,19 +50,18 @@ namespace Project.Forms
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            if (id_textBox.Text == "" || name_textBox.Text == "" || duration_textBox.Text == "")
+            if (name_textBox.Text == "")
             {
-                MessageBox.Show("Please, Enter the full data");
+                MessageBox.Show("Please, Enter the name of the course.");
             }
             else
             {
-                SqlCommand Update_Course = new SqlCommand("exec dbo.Course_Update " +
-                                                            id_textBox.Text + ",'" +
-                                                            name_textBox.Text + "','" +
-                                                            duration_textBox + "'", LogInForm.Connection);
+                SqlCommand Update_Course = new SqlCommand("exec dbo.Course_Update '" +
+                                                            id_textBox.Text + "','" +
+                                                            name_textBox.Text + "'", LogInForm.Connection);
 
                 int Affected_Rows = Update_Course.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows updated.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows updated.");
                 id_textBox.Text = name_textBox.Text = duration_textBox.Text = string.Empty;
                 load();
             }
@@ -78,9 +75,9 @@ namespace Project.Forms
             }
             else
             {
-                SqlCommand Delete_Course = new SqlCommand("exec dbo.Course_Delete" + int.Parse(id_textBox.Text), LogInForm.Connection);
+                SqlCommand Delete_Course = new SqlCommand("exec dbo.Course_Delete '" + int.Parse(id_textBox.Text) + "'", LogInForm.Connection);
                 int Affected_Rows = Delete_Course.ExecuteNonQuery();
-                MessageBox.Show(Affected_Rows.ToString() + " Rows deleted.");
+                MessageBox.Show(Affected_Rows.ToString() + " rows deleted.");
                 id_textBox.Text = name_textBox.Text = duration_textBox.Text = string.Empty;
                 load();
             }
