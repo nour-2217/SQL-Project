@@ -3,19 +3,15 @@
   <DataSet Name="DataSet1">
     <Query>
       <DataSourceReference>ExamData</DataSourceReference>
-      <CommandText>SELECT ID, FName, LName FROM Student</CommandText>
+      <CommandText>SELECT ID, Fname FROM Student</CommandText>
     </Query>
     <Fields>
       <Field Name="ID">
         <DataField>ID</DataField>
         <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
-      <Field Name="FName">
-        <DataField>FName</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
-      <Field Name="LName">
-        <DataField>LName</DataField>
+      <Field Name="Fname">
+        <DataField>Fname</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
     </Fields>
