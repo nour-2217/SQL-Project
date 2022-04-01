@@ -83,7 +83,6 @@ namespace Project.Forms
             }
         }
 
-
         private void CourseGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow Row = CourseGridView.Rows[e.RowIndex];
