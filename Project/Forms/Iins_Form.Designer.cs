@@ -63,7 +63,7 @@ namespace Project.Forms
             this.InstructorGridView.RowTemplate.Height = 25;
             this.InstructorGridView.Size = new System.Drawing.Size(310, 365);
             this.InstructorGridView.TabIndex = 20;
-            this.InstructorGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InstructorGridView_CellContentClick);
+            this.InstructorGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.InstructorGridView_RowHeaderMouseClick);
             // 
             // label8
             // 

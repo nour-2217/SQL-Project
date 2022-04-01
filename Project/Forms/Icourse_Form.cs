@@ -83,13 +83,13 @@ namespace Project.Forms
             }
         }
 
-        private void CourseGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowindex = CourseGridView.CurrentCell.RowIndex;
 
-            id_textBox.Text = CourseGridView.Rows[rowindex].Cells[0].Value.ToString();
-            name_textBox.Text = CourseGridView.Rows[rowindex].Cells[1].Value.ToString();
-            duration_textBox.Text = CourseGridView.Rows[rowindex].Cells[2].Value.ToString();
+        private void CourseGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow Row = CourseGridView.Rows[e.RowIndex];
+            id_textBox.Text = Row.Cells["ID"].Value.ToString();
+            name_textBox.Text = Row.Cells["Name"].Value.ToString();
+            duration_textBox.Text = Row.Cells["Duration"].Value.ToString() + " mins";
         }
     }
 }
