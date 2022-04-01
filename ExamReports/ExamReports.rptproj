@@ -49,15 +49,20 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSet Include="CourseID.rsd" />
     <DataSet Include="ExamID.rsd" />
+    <DataSet Include="InstructorID.rsd" />
     <DataSet Include="StudentID.rsd" />
   </ItemGroup>
   <ItemGroup>
     <DataSource Include="ExamData.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="CourseTopics.rdl" />
     <Report Include="ExamDetails.rdl" />
+    <Report Include="InstructorCourses.rdl" />
     <Report Include="StudentsAnswer.rdl" />
+    <Report Include="StudentsGrade.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
