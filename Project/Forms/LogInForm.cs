@@ -35,6 +35,7 @@ namespace Project
                     Ins_MainForm I_mainForm = new Ins_MainForm();
                     I_mainForm.Show();
                     LoggedInRole = UserLogin.Rows[0]["Admin"].ToString() == "True" ? Role.Admin : Role.Instructor;
+                    ID = int.Parse(UserLogin.Rows[0]["ID"].ToString());
                     this.Hide();
                 }
                 else
@@ -54,6 +55,7 @@ namespace Project
                 {
                     Std_MainForm S_mainForm = new Std_MainForm();
                     S_mainForm.Show();
+                    ID = int.Parse(UserLogin.Rows[0]["ID"].ToString());
                     LoggedInRole = Role.Student;
                     this.Hide();
                 }

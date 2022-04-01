@@ -17,6 +17,8 @@ namespace Project.Forms
         public Iexam_Form()
         {
             InitializeComponent();
+            ExamTimeInput.Format = DateTimePickerFormat.Custom;
+            ExamTimeInput.CustomFormat = "HH:mm:ss tt";
         }
 
         private void Iexam_Form_Load(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace Project.Forms
             dataGridView1.DataSource = ExamTable;
             dataGridView1.Columns["ID"].Visible = dataGridView1.Columns["Topic_FK"].Visible = false;
             ExamIDOutput.Text =
-            DateExamOutput.Text =
+            DateTimeOutput.Text =
             DurationExamOutput.Text =
             QuestionExamOutput.Text =
             TopicExamOutput.Text =
@@ -64,7 +66,8 @@ namespace Project.Forms
             McQExamInput.Text =
             ToFExamInput.Text =
             DurationExamInput.Text =
-            DateExamInput.Text = String.Empty;
+            ExamTimeInput.Text = 
+            ExamDateInput.Text = String.Empty;
             dataGridView2.DataSource = null;
         }
 
@@ -84,7 +87,7 @@ namespace Project.Forms
             TopicExamOutput.Text = Row.Cells["Topic_Name"].Value.ToString();
             QuestionExamOutput.Text = Row.Cells["QNo"].Value.ToString();
             DurationExamOutput.Text = Row.Cells["Duration"].Value.ToString() + " mins";
-            DateExamOutput.Text = Row.Cells["Date"].Value.ToString();
+            DateTimeOutput.Text = Row.Cells["Date"].Value.ToString();
             GetQuestions(ExamIDOutput.Text);
         }
 
@@ -99,7 +102,8 @@ namespace Project.Forms
         {
             try
             {
-                string Statement = $"GenerateExam {TIndex[TopicExamList.SelectedIndex]}, {McQExamInput.Text}, {ToFExamInput.Text}, {DurationExamInput.Text}, '{DateExamInput.Text}'";
+                string Time = String.Join("", ExamTimeInput.Text.Split(new String[] { " PM" }, StringSplitOptions.RemoveEmptyEntries));
+                string Statement = $"GenerateExam {TIndex[TopicExamList.SelectedIndex]}, {McQExamInput.Text}, {ToFExamInput.Text}, {DurationExamInput.Text}, '{ExamDateInput.Value.ToShortDateString()} {Time}'";
                 MessageBox.Show(Statement);
                 SqlCommand Command = new SqlCommand(Statement, LogInForm.Connection);
                 int Flag = int.Parse(Command.ExecuteScalar().ToString());
