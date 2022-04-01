@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -68,6 +69,24 @@ namespace Project.Forms
         {
             ActivateButton(sender);
             OpenChildForm(new Forms.Stdexam_Form(), sender);
+        }
+
+        private void Topic_btn_Click(object sender, EventArgs e)
+        {
+            StTopics sto = new StTopics();
+            sto.Show();
+            SqlCommand Command = new SqlCommand("exec dbo.Student_Topic_Grade '" +
+                                                            LogInForm.ID + "'"
+                                                            , LogInForm.Connection);
+            SqlDataReader SqlOutput = Command.ExecuteReader();
+            DataTable Student_Topic_GradeTable = new DataTable();
+            Student_Topic_GradeTable.Load(SqlOutput);
+            sto.std.DataSource = Student_Topic_GradeTable;
+        }
+
+        private void CloseAppbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
