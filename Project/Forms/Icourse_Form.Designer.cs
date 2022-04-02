@@ -50,7 +50,7 @@ namespace Project.Forms
             this.CourseGridView.RowTemplate.Height = 25;
             this.CourseGridView.Size = new System.Drawing.Size(310, 365);
             this.CourseGridView.TabIndex = 21;
-            this.CourseGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseGridView_CellContentClick);
+            this.CourseGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CourseGridView_RowHeaderMouseClick);
             // 
             // duration_textBox
             // 

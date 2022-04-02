@@ -129,20 +129,20 @@ namespace Project.Forms
                 load();
             }
         }
-
-        private void InstructorGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void InstructorGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int rowindex = InstructorGridView.CurrentCell.RowIndex;
+            DataGridViewRow Row = InstructorGridView.Rows[e.RowIndex];
+            id_textBox.Text = Row.Cells["ID"].Value.ToString();
+            fname_textBox.Text = Row.Cells["FName"].Value.ToString();
+            Lname_textBox.Text = Row.Cells["LName"].Value.ToString();
+            gender_textBox.Text = Row.Cells["Gender"].Value.ToString() + " mins";
+            phone_textBox.Text = Row.Cells["Phone"].Value.ToString();
+            password_textBox.Text = Row.Cells["Pass"].Value.ToString();
+            dob_textBox.Text = Row.Cells["DoB"].Value.ToString();
+            age_textBox.Text = Row.Cells["Age"].Value.ToString();
+            dept_textBox.Text = Row.Cells["Department_FK"].Value.ToString();
 
-            id_textBox.Text = InstructorGridView.Rows[rowindex].Cells[0].Value.ToString();
-            fname_textBox.Text = InstructorGridView.Rows[rowindex].Cells[1].Value.ToString();
-            Lname_textBox.Text = InstructorGridView.Rows[rowindex].Cells[2].Value.ToString();
-            gender_textBox.Text = InstructorGridView.Rows[rowindex].Cells[4].Value.ToString();
-            phone_textBox.Text = InstructorGridView.Rows[rowindex].Cells[5].Value.ToString();
-            password_textBox.Text = InstructorGridView.Rows[rowindex].Cells[6].Value.ToString();
-            dob_textBox.Text = InstructorGridView.Rows[rowindex].Cells[7].Value.ToString();
-            age_textBox.Text = InstructorGridView.Rows[rowindex].Cells[8].Value.ToString();
-            dept_textBox.Text = InstructorGridView.Rows[rowindex].Cells[9].Value.ToString();
         }
     }
 }
